@@ -1,11 +1,29 @@
-import React from 'react'
-
+import React from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import AppLayout from "./Ui/AppLayout";
+import Dashboard from "./pages/Dashboard";
+import Students from "./pages/Students";
+import Classes from "./pages/Classes";
+import Messages from "./pages/Messages";
+import Profile from "./pages/Profile";
+import PageNotFound from "./pages/PageNotFound";
 function App() {
   return (
-    <div>
-      <h1>Class Pilot</h1>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route index element={<Navigate replace to="dashboard" />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="students" element={<Students />} />
+          <Route path="classes" element={<Classes />} />
+          <Route path="messages" element={<Messages />} />
+          <Route path="profile" element={<Profile />} />
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
