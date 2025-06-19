@@ -1,9 +1,10 @@
 import React from "react";
 
 function LoginPage() {
-  return {
-    /* 
-      TODO
+  return (
+    <>
+
+    {/*TODO
      1. Create a login form UI with input fields:
 
 -Email
@@ -20,10 +21,12 @@ Email format
 
 -Handle and display any errors from the API.
 
--On success, redirect or update UI accordingly (e.g., navigate to dashboard).
+-On success, redirect or update UI accordingly (e.g., navigate to dashboard).*/}
+   <div>LoginPage</div>
 
-    */
-  };
+  
+    </>
+  )
 }
 
 export default LoginPage;
