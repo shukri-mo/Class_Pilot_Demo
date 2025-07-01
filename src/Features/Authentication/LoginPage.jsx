@@ -24,7 +24,7 @@ Email format
 -On success, redirect or update UI accordingly (e.g., navigate to dashboard).*/}
    <div>LoginPage</div>
 
-  
+ 
     </>
   )
 }
