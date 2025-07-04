@@ -11,10 +11,11 @@ export async function apiFetch(endpoint, options = {}) {
 
   console.log("Calling API:", `${BASE_URL}${endpoint}`);
   const res = await fetch(`${BASE_URL}${endpoint}`, { headers, ...options });
-
+  console.log(res, "res");
   if (!res.ok) {
     // Read the full text once
     const text = await res.text();
+    
 
     // Try to parse JSON, else leave as text
     let errBody;
@@ -26,6 +27,11 @@ export async function apiFetch(endpoint, options = {}) {
 
     console.error(`❌ [${res.status}] ${endpoint} →`, errBody);
     throw new Error(`API ${res.status}: ${typeof errBody === 'string' ? errBody : JSON.stringify(errBody)}`);
+  }
+
+  // redirect to dashboard
+  if (res.status === 200) {
+    window.location.href = "/dashboard";
   }
 
   return res.json();
