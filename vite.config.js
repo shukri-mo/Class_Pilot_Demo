@@ -11,8 +11,6 @@ export default defineConfig({
         target: 'https://classpilot-chi.vercel.app',
         changeOrigin: true,
         secure: true,
-        // strip /api from the front, so /api/auth/register → /auth/register
-         rewrite: (path) => path.replace(/^\/api/, 'api'),
       },
     },
   },
